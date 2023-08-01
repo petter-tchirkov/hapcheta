@@ -1,0 +1,12 @@
+{
+  "root": true,
+  "parser": "vue-eslint-parser",
+  "extends": [
+    "eslint:recommended",
+    "plugin:vue/vue3-recommended",
+    "plugin:json/recommended-with-comments",
+    "@nuxtjs/eslint-config-typescript",
+    "prettier"
+  ],
+  "rules": { "vue/multi-word-component-names": 0 }
+}

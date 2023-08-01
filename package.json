@@ -1,0 +1,42 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "lint": "eslint --ext .js, .vue"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "latest",
+    "@nuxtjs/eslint-config-typescript": "^12.0.0",
+    "@nuxtjs/eslint-module": "^4.1.0",
+    "@nuxtjs/i18n": "^8.0.0-beta.13",
+    "@nuxtjs/tailwindcss": "^6.8.0",
+    "@types/node": "^18.17.1",
+    "@vueuse/core": "^10.3.0",
+    "@vueuse/nuxt": "^10.3.0",
+    "eslint": "^8.46.0",
+    "eslint-config-prettier": "^8.9.0",
+    "eslint-plugin-json": "^3.1.0",
+    "eslint-plugin-vue": "^9.16.1",
+    "nuxt": "^3.6.5",
+    "nuxt-icon": "^0.4.2",
+    "sass": "^1.64.2",
+    "vue-eslint-parser": "^9.3.1"
+  },
+  "dependencies": {
+    "@animxyz/vue3": "^0.6.7",
+    "@pinia/nuxt": "^0.4.11",
+    "pinia": "^2.1.6",
+    "prettier": "^3.0.0",
+    "primeicons": "^6.0.1",
+    "primevue": "^3.31.0",
+    "typescript": "^5.1.6"
+  },
+  "overrides": {
+    "vue": "latest"
+  }
+}

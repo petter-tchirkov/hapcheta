@@ -1,0 +1,21 @@
+@font-face {
+  font-family: 'FarAwayGalaxy';
+  src: url('/fonts/Inter-VariableFont_slnt,wght.ttf') format('ttf');
+}
+
+body,
+html {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Inter-VariableFont_slnt', sans-serif;
+}
+
+section {
+  width: 100%;
+  height: 100dvh;
+}
+
+.container {
+  padding: 16px;
+}

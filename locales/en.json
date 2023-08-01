@@ -1,0 +1,23 @@
+{
+  "title": "pills",
+  "auth": {
+    "login": "Login",
+    "password": "Password"
+  },
+  "sidebar": {
+    "trade_network": "Trade Network",
+    "settings": "Settings",
+    "logout": "Log out"
+  },
+  "trade_networks": {
+    "name": "Name",
+    "coordinates": "Coordinates",
+    "status": {
+      "title": "Opened Status",
+      "opened": "Opened",
+      "closed": "Closed"
+    },
+    "orders": "Orders awaiting",
+    "refreshed_at": "Last refresh date"
+  }
+}
