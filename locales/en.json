@@ -1,5 +1,5 @@
 {
-  "title": "pills",
+  "title": "Hapcheta",
   "auth": {
     "login": "Login",
     "password": "Password"
@@ -18,6 +18,7 @@
       "closed": "Closed"
     },
     "orders": "Orders awaiting",
-    "refreshed_at": "Last refresh date"
+    "refreshed_at": "Last refresh date",
+    "new_point": "New trade point"
   }
 }

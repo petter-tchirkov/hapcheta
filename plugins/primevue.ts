@@ -21,6 +21,7 @@ import Paginator from 'primevue/paginator'
 import ToggleButton from 'primevue/togglebutton'
 import Tag from 'primevue/tag'
 import OverlayPanel from 'primevue/overlaypanel'
+import Toolbar from 'primevue/toolbar'
 
 export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.use(PrimeVue, { ripple: true })
@@ -45,4 +46,5 @@ export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.component('Password', Password)
   nuxtApp.vueApp.component('OverlayPanel', OverlayPanel)
   nuxtApp.vueApp.component('Sidebar', Sidebar)
+  nuxtApp.vueApp.component('Toolbar', Toolbar)
 })
