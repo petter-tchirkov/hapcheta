@@ -1,5 +1,6 @@
 import { defineNuxtPlugin } from '#app'
 import Sidebar from 'primevue/sidebar'
+import Card from 'primevue/card'
 import PrimeVue from 'primevue/config'
 import Password from 'primevue/password'
 import Button from 'primevue/button'
@@ -47,4 +48,5 @@ export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.component('OverlayPanel', OverlayPanel)
   nuxtApp.vueApp.component('Sidebar', Sidebar)
   nuxtApp.vueApp.component('Toolbar', Toolbar)
+  nuxtApp.vueApp.component('Card', Card)
 })

@@ -1,16 +1,17 @@
 <template>
   <section>
     <Header>{{ $t('sidebar.trade_network') }}</Header>
-    <div class="container p-4 w-full">
+    <div class="container w-full p-4">
       <DataTable
         v-model:editingRows="editingRows"
-        :value="tradeNetworks"
+        :value="stores"
         edit-mode="row"
         data-key="name"
+        row-hover
         paginator
         :rows="10"
-        class="p-datatable-sm"
-        @row-edit-save="onRowEditSave"
+        class="p-datatable-sm cursor-pointer"
+        @row-click="redirectToPage"
       >
         <template #header>
           <Button
@@ -18,15 +19,21 @@
             severity="success"
             :label="$t('trade_networks.new_point')"
             size="small"
-            @click="isAddTradePointDialogOpened = true"
+            @click="isAddStoreOpened = true"
           />
         </template>
-        <Column field="name" :header="$t('trade_networks.name')">
+        <Column
+          field="name"
+          :header="$t('trade_networks.name')"
+        >
           <template #editor="{ data, field }">
             <InputText v-model="data[field]" />
           </template>
         </Column>
-        <Column field="coordinates" :header="$t('trade_networks.coordinates')">
+        <Column
+          field="coordinates"
+          :header="$t('trade_networks.coordinates')"
+        >
           <template #body="{ data }">
             <div class="flex flex-col">
               <span>X: {{ data.coordinates.x }}</span>
@@ -34,7 +41,10 @@
             </div>
           </template>
         </Column>
-        <Column field="isOpened" :header="$t('trade_networks.status.title')">
+        <Column
+          field="isOpened"
+          :header="$t('trade_networks.status.title')"
+        >
           <template #body="{ data }">
             <Tag
               :value="
@@ -46,7 +56,10 @@
             />
           </template>
         </Column>
-        <Column field="orders" :header="$t('trade_networks.orders')">
+        <Column
+          field="orders"
+          :header="$t('trade_networks.orders')"
+        >
           <template #editor="{ data, field }">
             <InputNumber v-model="data[field]" />
           </template>
@@ -63,7 +76,7 @@
           <Icon name="ic:outline-mode-edit-outline" />
         </Column>
         <Column>
-          <template #body="{ data }">
+          <template #body>
             <Button
               icon="pi pi-trash"
               text
@@ -77,7 +90,8 @@
         </Column>
       </DataTable>
       <Dialog
-        v-model:visible="isAddTradePointDialogOpened"
+        v-model:visible="isAddStoreOpened"
+        class="p-4"
         :modal="true"
         :header="$t('trade_networks.new_point')"
         :style="{ width: '450px' }"
@@ -85,13 +99,19 @@
         <InputText
           id="name"
           v-model="newPoint.name"
-          class="mb-3 w-full"
+          class="w-full mb-3"
           :placeholder="$t('trade_networks.name')"
         />
-        <div class="flex flex-col gap-2 mb-3">
+        <div class="flex flex-col gap-2 mb-5">
           <span>{{ $t('trade_networks.coordinates') }}</span>
-          <InputText v-model="newPoint.coordinates.x" placeholder="x" />
-          <InputText v-model="newPoint.coordinates.y" placeholder="y" />
+          <InputText
+            v-model="newPoint.coordinates.x"
+            placeholder="x"
+          />
+          <InputText
+            v-model="newPoint.coordinates.y"
+            placeholder="y"
+          />
         </div>
         <Dropdown
           v-model="newPoint.isOpened"
@@ -107,7 +127,11 @@
           class="w-full mb-3"
           :placeholder="$t('trade_networks.orders')"
         />
-        <Calendar v-model="newPoint.refreshedAt" class="w-full" />
+        <Calendar
+          v-model="newPoint.refreshedAt"
+          class="w-full"
+          show-icon
+        />
       </Dialog>
       <Dialog
         v-model:visible="isDeleteTradePointDialogOpened"
@@ -115,13 +139,22 @@
         header="Confirm"
         :modal="true"
       >
-        <div class="confirmation-content flex items-center">
-          <i class="pi pi-exclamation-triangle mr-3" style="font-size: 2rem" />
+        <div class="flex items-center confirmation-content">
+          <i
+            class="mr-3 pi pi-exclamation-triangle"
+            style="font-size: 2rem"
+          />
           <span>Are you sure you want to delete?</span>
         </div>
         <template #footer>
-          <Button label="No" icon="pi pi-times" />
-          <Button label="Yes" icon="pi pi-check" />
+          <Button
+            label="No"
+            icon="pi pi-times"
+          />
+          <Button
+            label="Yes"
+            icon="pi pi-check"
+          />
         </template>
       </Dialog>
     </div>
@@ -129,11 +162,12 @@
 </template>
 
 <script setup lang="ts">
-  import { useTradeNetworkStore } from '~/store/tradeNetworks'
+  import { DataTableRowEditCancelEvent } from 'primevue/datatable'
+  import { useStoresStore } from '~/store/stores'
 
-  const tradeNetworks = useTradeNetworkStore().tradeNetworks
+  const stores = useStoresStore().stores
   const editingRows = ref([])
-  const isAddTradePointDialogOpened = ref(false)
+  const isAddStoreOpened = ref(false)
   const isDeleteTradePointDialogOpened = ref(false)
 
   const newPoint = ref({
@@ -144,10 +178,8 @@
     refreshedAt: '',
   })
 
-  const onRowEditSave = (event) => {
-    const { newData, index } = event
-
-    products.tradeNetworks[index] = newData
+  const redirectToPage = (event: DataTableRowEditCancelEvent) => {
+    navigateTo(`/stores/${event.data.id}`)
   }
 </script>
 

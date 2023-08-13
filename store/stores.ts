@@ -1,8 +1,18 @@
 import { defineStore } from 'pinia'
 
-export const useTradeNetworkStore = defineStore('trade_networks', () => {
-  const tradeNetworks = ref([
+type Store = {
+  id: number
+  name: string
+  coordinates: { x: number; y: number }
+  isOpened: boolean
+  orders: number
+  refreshedAt: string
+}
+
+export const useStoresStore = defineStore('trade_networks', () => {
+  const stores: Ref<Store[]> = ref([
     {
+      id: 1,
       name: 'Hapcheta',
       coordinates: { x: 6065100, y: 4313375 },
       isOpened: true,
@@ -10,6 +20,7 @@ export const useTradeNetworkStore = defineStore('trade_networks', () => {
       refreshedAt: '2023-08-01',
     },
     {
+      id: 1,
       name: 'Hapcheta',
       coordinates: { x: 6065100, y: 4313375 },
       isOpened: false,
@@ -17,6 +28,7 @@ export const useTradeNetworkStore = defineStore('trade_networks', () => {
       refreshedAt: '2023-08-01',
     },
     {
+      id: 1,
       name: 'Hapcheta',
       coordinates: { x: 6065100, y: 4313375 },
       isOpened: true,
@@ -24,6 +36,7 @@ export const useTradeNetworkStore = defineStore('trade_networks', () => {
       refreshedAt: '2023-08-01',
     },
     {
+      id: 1,
       name: 'Hapcheta',
       coordinates: { x: 6065100, y: 4313375 },
       isOpened: false,
@@ -31,6 +44,7 @@ export const useTradeNetworkStore = defineStore('trade_networks', () => {
       refreshedAt: '2023-08-01',
     },
     {
+      id: 1,
       name: 'Hapcheta',
       coordinates: { x: 6065100, y: 4313375 },
       isOpened: true,
@@ -38,6 +52,7 @@ export const useTradeNetworkStore = defineStore('trade_networks', () => {
       refreshedAt: '2023-08-01',
     },
     {
+      id: 1,
       name: 'Hapcheta',
       coordinates: { x: 6065100, y: 4313375 },
       isOpened: true,
@@ -45,6 +60,7 @@ export const useTradeNetworkStore = defineStore('trade_networks', () => {
       refreshedAt: '2023-08-01',
     },
     {
+      id: 1,
       name: 'Hapcheta',
       coordinates: { x: 6065100, y: 4313375 },
       isOpened: true,
@@ -52,6 +68,7 @@ export const useTradeNetworkStore = defineStore('trade_networks', () => {
       refreshedAt: '2023-08-01',
     },
     {
+      id: 1,
       name: 'Hapcheta',
       coordinates: { x: 6065100, y: 4313375 },
       isOpened: false,
@@ -59,6 +76,7 @@ export const useTradeNetworkStore = defineStore('trade_networks', () => {
       refreshedAt: '2023-08-01',
     },
     {
+      id: 1,
       name: 'Hapcheta',
       coordinates: { x: 6065100, y: 4313375 },
       isOpened: true,
@@ -66,6 +84,7 @@ export const useTradeNetworkStore = defineStore('trade_networks', () => {
       refreshedAt: '2023-08-01',
     },
     {
+      id: 1,
       name: 'Hapcheta',
       coordinates: { x: 6065100, y: 4313375 },
       isOpened: false,
@@ -73,6 +92,7 @@ export const useTradeNetworkStore = defineStore('trade_networks', () => {
       refreshedAt: '2023-08-01',
     },
     {
+      id: 1,
       name: 'Hapcheta',
       coordinates: { x: 6065100, y: 4313375 },
       isOpened: true,
@@ -80,6 +100,7 @@ export const useTradeNetworkStore = defineStore('trade_networks', () => {
       refreshedAt: '2023-08-01',
     },
     {
+      id: 1,
       name: 'Hapcheta',
       coordinates: { x: 6065100, y: 4313375 },
       isOpened: true,
@@ -87,6 +108,7 @@ export const useTradeNetworkStore = defineStore('trade_networks', () => {
       refreshedAt: '2023-08-01',
     },
     {
+      id: 1,
       name: 'Hapcheta',
       coordinates: { x: 6065100, y: 4313375 },
       isOpened: true,
@@ -94,6 +116,7 @@ export const useTradeNetworkStore = defineStore('trade_networks', () => {
       refreshedAt: '2023-08-01',
     },
     {
+      id: 1,
       name: 'Hapcheta',
       coordinates: { x: 6065100, y: 4313375 },
       isOpened: false,
@@ -101,6 +124,7 @@ export const useTradeNetworkStore = defineStore('trade_networks', () => {
       refreshedAt: '2023-08-01',
     },
     {
+      id: 1,
       name: 'Hapcheta',
       coordinates: { x: 6065100, y: 4313375 },
       isOpened: true,
@@ -108,6 +132,7 @@ export const useTradeNetworkStore = defineStore('trade_networks', () => {
       refreshedAt: '2023-08-01',
     },
     {
+      id: 1,
       name: 'Hapcheta',
       coordinates: { x: 6065100, y: 4313375 },
       isOpened: false,
@@ -115,6 +140,7 @@ export const useTradeNetworkStore = defineStore('trade_networks', () => {
       refreshedAt: '2023-08-01',
     },
     {
+      id: 1,
       name: 'Hapcheta',
       coordinates: { x: 6065100, y: 4313375 },
       isOpened: true,
@@ -122,6 +148,7 @@ export const useTradeNetworkStore = defineStore('trade_networks', () => {
       refreshedAt: '2023-08-01',
     },
     {
+      id: 1,
       name: 'Hapcheta',
       coordinates: { x: 6065100, y: 4313375 },
       isOpened: true,
@@ -129,6 +156,7 @@ export const useTradeNetworkStore = defineStore('trade_networks', () => {
       refreshedAt: '2023-08-01',
     },
     {
+      id: 1,
       name: 'Hapcheta',
       coordinates: { x: 6065100, y: 4313375 },
       isOpened: true,
@@ -136,6 +164,7 @@ export const useTradeNetworkStore = defineStore('trade_networks', () => {
       refreshedAt: '2023-08-01',
     },
     {
+      id: 1,
       name: 'Hapcheta',
       coordinates: { x: 6065100, y: 4313375 },
       isOpened: false,
@@ -143,6 +172,7 @@ export const useTradeNetworkStore = defineStore('trade_networks', () => {
       refreshedAt: '2023-08-01',
     },
     {
+      id: 1,
       name: 'Hapcheta',
       coordinates: { x: 6065100, y: 4313375 },
       isOpened: true,
@@ -150,6 +180,7 @@ export const useTradeNetworkStore = defineStore('trade_networks', () => {
       refreshedAt: '2023-08-01',
     },
     {
+      id: 1,
       name: 'Hapcheta',
       coordinates: { x: 6065100, y: 4313375 },
       isOpened: false,
@@ -157,6 +188,7 @@ export const useTradeNetworkStore = defineStore('trade_networks', () => {
       refreshedAt: '2023-08-01',
     },
     {
+      id: 1,
       name: 'Hapcheta',
       coordinates: { x: 6065100, y: 4313375 },
       isOpened: true,
@@ -164,6 +196,7 @@ export const useTradeNetworkStore = defineStore('trade_networks', () => {
       refreshedAt: '2023-08-01',
     },
     {
+      id: 1,
       name: 'Hapcheta',
       coordinates: { x: 6065100, y: 4313375 },
       isOpened: true,
@@ -171,6 +204,7 @@ export const useTradeNetworkStore = defineStore('trade_networks', () => {
       refreshedAt: '2023-08-01',
     },
     {
+      id: 1,
       name: 'Hapcheta',
       coordinates: { x: 6065100, y: 4313375 },
       isOpened: true,
@@ -178,6 +212,7 @@ export const useTradeNetworkStore = defineStore('trade_networks', () => {
       refreshedAt: '2023-08-01',
     },
     {
+      id: 1,
       name: 'Hapcheta',
       coordinates: { x: 6065100, y: 4313375 },
       isOpened: false,
@@ -185,6 +220,7 @@ export const useTradeNetworkStore = defineStore('trade_networks', () => {
       refreshedAt: '2023-08-01',
     },
     {
+      id: 1,
       name: 'Hapcheta',
       coordinates: { x: 6065100, y: 4313375 },
       isOpened: true,
@@ -192,6 +228,7 @@ export const useTradeNetworkStore = defineStore('trade_networks', () => {
       refreshedAt: '2023-08-01',
     },
     {
+      id: 1,
       name: 'Hapcheta',
       coordinates: { x: 6065100, y: 4313375 },
       isOpened: false,
@@ -199,6 +236,7 @@ export const useTradeNetworkStore = defineStore('trade_networks', () => {
       refreshedAt: '2023-08-01',
     },
     {
+      id: 1,
       name: 'Hapcheta',
       coordinates: { x: 6065100, y: 4313375 },
       isOpened: true,
@@ -206,6 +244,7 @@ export const useTradeNetworkStore = defineStore('trade_networks', () => {
       refreshedAt: '2023-08-01',
     },
     {
+      id: 1,
       name: 'Hapcheta',
       coordinates: { x: 6065100, y: 4313375 },
       isOpened: true,
@@ -213,5 +252,5 @@ export const useTradeNetworkStore = defineStore('trade_networks', () => {
       refreshedAt: '2023-08-01',
     },
   ])
-  return { tradeNetworks }
+  return { stores }
 })

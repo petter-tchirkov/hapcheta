@@ -1,7 +1,7 @@
 <template>
   <section>
     <Header>{{ $t('sidebar.settings') }}</Header>
-    <div class="container"></div>
+    <div class="container">settings</div>
   </section>
 </template>
 

@@ -1,6 +1,6 @@
 <template>
   <main class="flex w-full h-[100dvh]">
-    <Sidebar v-model:visible="useUiStore().isSidebarShown">
+    <Sidebar v-model:visible="useUiStore().isSidebarShown" class="lg:hidden">
       <ul>
         <SidebarMenuItem
           v-for="item in menuItems"
@@ -12,7 +12,7 @@
         />
       </ul>
     </Sidebar>
-    <aside class="border-r p-4 grow w-64">
+    <aside class="border-r p-4 grow w-64 hidden lg:block">
       <ul>
         <SidebarMenuItem
           v-for="item in menuItems"
