@@ -5,20 +5,26 @@
     "password": "Password"
   },
   "sidebar": {
-    "trade_network": "Trade Network",
+    "client": "Client",
     "settings": "Settings",
     "logout": "Log out"
   },
-  "trade_networks": {
-    "name": "Name",
-    "coordinates": "Coordinates",
-    "status": {
-      "title": "Opened Status",
-      "opened": "Opened",
-      "closed": "Closed"
+  "client": {
+    "shop": {
+      "shop": "Shop",
+      "name": "Name",
+      "coordinates": "Coordinates",
+      "status": {
+        "title": "Opened Status",
+        "opened": "Opened",
+        "closed": "Closed"
+      },
+      "orders": "Orders awaiting",
+      "refreshed_at": "Last refresh date",
+      "new_point": "New trade point"
     },
-    "orders": "Orders awaiting",
-    "refreshed_at": "Last refresh date",
-    "new_point": "New trade point"
+    "employee": {
+      "employee": "Employee"
+    }
   }
 }

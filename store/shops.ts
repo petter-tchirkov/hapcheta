@@ -9,8 +9,8 @@ type Store = {
   refreshedAt: string
 }
 
-export const useStoresStore = defineStore('trade_networks', () => {
-  const stores: Ref<Store[]> = ref([
+export const useShopsStore = defineStore('shops', () => {
+  const shops: Ref<Store[]> = ref([
     {
       id: 1,
       name: 'Hapcheta',
@@ -252,5 +252,5 @@ export const useStoresStore = defineStore('trade_networks', () => {
       refreshedAt: '2023-08-01',
     },
   ])
-  return { stores }
+  return { shops }
 })

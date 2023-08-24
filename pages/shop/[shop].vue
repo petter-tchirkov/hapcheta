@@ -1,9 +1,9 @@
 <template>
   <section>
-    <Header>{{ $t('sidebar.trade_network') + ' ' + route.params.tn }}</Header>
+    <Header>{{ route.params.shop }}</Header>
     <div class="p-4">
       <Card class="mb-2">
-        <template #title>TN details</template>
+        <template #title>Shop details</template>
         <template #content>
           <div class="flex flex-col gap-3">
             <div class="flex justify-between items-center">

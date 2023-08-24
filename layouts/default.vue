@@ -1,6 +1,9 @@
 <template>
   <main class="flex w-full h-[100dvh]">
-    <Sidebar v-model:visible="useUiStore().isSidebarShown" class="lg:hidden">
+    <Sidebar
+      v-model:visible="useUiStore().isSidebarShown"
+      class="lg:hidden"
+    >
       <ul>
         <SidebarMenuItem
           v-for="item in menuItems"
@@ -35,7 +38,7 @@
 
   const menuItems = [
     {
-      name: 'sidebar.trade_network',
+      name: 'sidebar.client',
       link: '/',
       icon: 'healthicons:pharmacy-alt-outline',
     },
