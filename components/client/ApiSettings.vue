@@ -48,7 +48,10 @@
       />
       <Column header="Activation Status">
         <template #body="{ data }">
-          <InputSwitch v-model="data.isActive" />
+          <InputSwitch
+            @change="isChangeApiKeyDialogOpened = !isChangeApiKeyDialogOpened"
+            v-model="data.isActive"
+          />
         </template>
       </Column>
       <Column>
@@ -63,6 +66,32 @@
         </template>
       </Column>
     </DataTable>
+    <Dialog
+      v-model:visible="isChangeApiKeyDialogOpened"
+      :style="{ width: '450px' }"
+      header="Confirm"
+      :modal="true"
+    >
+      <div class="flex items-center confirmation-content">
+        <i
+          class="mr-3 pi pi-exclamation-triangle"
+          style="font-size: 2rem"
+        />
+        <span>Are you sure you want to change?</span>
+      </div>
+      <template #footer>
+        <Button
+          label="No"
+          icon="pi pi-times"
+          @click="isChangeApiKeyDialogOpened = false"
+        />
+        <Button
+          label="Yes"
+          icon="pi pi-check"
+          @click="isChangeApiKeyDialogOpened = false"
+        />
+      </template>
+    </Dialog>
     <Dialog
       v-model:visible="isDeleteApiKeyDialogOpened"
       :style="{ width: '450px' }"
@@ -84,6 +113,7 @@
         <Button
           label="Yes"
           icon="pi pi-check"
+          @click="isDeleteApiKeyDialogOpened = false"
         />
       </template>
     </Dialog>
@@ -123,6 +153,7 @@
   ])
   const editingRows = ref([])
   const isDeleteApiKeyDialogOpened = ref(false)
+  const isChangeApiKeyDialogOpened = ref(false)
 </script>
 
 <style scoped></style>
